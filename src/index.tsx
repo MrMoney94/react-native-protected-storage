@@ -17,6 +17,30 @@ const ProtectedStorage = NativeModules.ProtectedStorage
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return ProtectedStorage.multiply(a, b);
+export function setItemKS(name: string, value: string): Promise<string> {
+  return ProtectedStorage.setItem(name, value);
+}
+
+export function getItemKS(name: string): Promise<string> {
+  return ProtectedStorage.getItem(name);
+}
+
+export function removeItemKS(name: string): Promise<string> {
+  return ProtectedStorage.removeItem(name);
+}
+
+export function clearAll(): Promise<string> {
+  return ProtectedStorage.clearAll();
+}
+
+export function setItemStorage(name: string, value: string): Promise<string> {
+  return ProtectedStorage.storageSetItem(name, value);
+}
+
+export function getItemStorage(name: string): Promise<string> {
+  return ProtectedStorage.storageGetItem(name);
+}
+
+export function removeItemStorage(name: string): Promise<string> {
+  return ProtectedStorage.storageRemoveItem(name);
 }
